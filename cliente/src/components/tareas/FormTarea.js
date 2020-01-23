@@ -1,20 +1,20 @@
 import React from 'react';
 
 const FormTarea = () => {
-    return ( 
+    return (
         <div className="formulario">
             <form>
                 <div className="contenedor-input">
-                    <input 
+                    <input
                         type="text"
                         className="input-text"
-                        name="nombre" 
+                        name="nombre"
                         id="nombre"
                         placeholder="Nombre tarea..."
                         />
                 </div>
                 <div className="contenedor-input">
-                    <input 
+                    <input
                         type="submit"
                         className="btn btn-primario btn-submit btn-block"
                         value="Agreagar Tarea"
@@ -24,5 +24,5 @@ const FormTarea = () => {
         </div>
      );
 }
- 
+
 export default FormTarea;
