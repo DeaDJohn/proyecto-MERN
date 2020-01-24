@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import ProyectoContext from '../../context/proyectos/proyectoContext';
 import TareaContext from '../../context/tareas/tareaContext';
+import uuid from 'uuid';
 
 const FormTarea = () => {
 
@@ -47,6 +48,7 @@ const FormTarea = () => {
         }
 
         //agregar la nueva tarea al state de tareas
+        tarea.id = uuid.v4();
         tarea.proyectoId = proyectoActual.id;
         tarea.estado = false;
         agregarTarea(tarea);
