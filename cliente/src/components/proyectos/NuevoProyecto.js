@@ -13,7 +13,6 @@ const NuevoProyecto = () => {
     });
 
     // Extraer nombre de proyecto
-    console.log(proyectosContext);
     const {nombre} = proyecto;
 
     const onChangeProyecto = e => {
