@@ -1,12 +1,17 @@
 import React, { Fragment , useContext } from 'react';
 import Tarea from './Tarea';
-import proyectoContext from '../../context/proyectos/proyectoContext';
+import ProyectoContext from '../../context/proyectos/proyectoContext';
+import TareaContext from '../../context/tareas/tareaContext';
 
 const ListadoTareas = () => {
 
     // Extraer proyectos de state inicial
-    const proyectosContext = useContext(proyectoContext);
+    const proyectosContext = useContext(ProyectoContext);
     const { proyecto, eliminarProyecto } = proyectosContext;
+
+    // obtener las tareas del proyecto
+    const tareasContext = useContext(TareaContext);
+    const { tareasproyecto } = tareasContext;
 
     // Si no hay proyecto seleccionado
     if(!proyecto) return <h2>Selecciona un proyecto</h2>
@@ -14,12 +19,7 @@ const ListadoTareas = () => {
     // Array destructuring para extraer el proyecto actual
     const [proyectoActual] = proyecto;
 
-    const tareasProyecto = [
-        {nombre: 'Elegir Plataforma', estado: true},
-        {nombre: 'Elegir Colores', estado: false},
-        {nombre: 'Elegir Plataforma de pago', estado: false},
-        {nombre: 'Elegir Hosting', estado: true}
-    ]
+    const tareasProyecto = [];
 
     // Elimina un proyecto
     const onClickEliminar = () => {
@@ -30,10 +30,11 @@ const ListadoTareas = () => {
             <h2>Proyecto: {proyectoActual.nombre}</h2>
 
             <ul className="listado-tareas">
-                {tareasProyecto.length === 0
+                {tareasproyecto.length === 0
                     ? (<li className="tarea">No hay tareas</li>)
-                    : tareasProyecto.map( tarea =>(
+                    : tareasproyecto.map( tarea =>(
                         <Tarea
+                            key={tarea.id}
                             tarea={tarea}
                         />
                     ))

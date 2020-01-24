@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import uuid from 'uuid';
 
-import proyectoContext from "./proyectoContext";
+import ProyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
 import {
     FORMULARIO_PROYECTO,
@@ -87,7 +87,7 @@ const ProyectoState = props => {
 
 
     return (
-        <proyectoContext.Provider
+        <ProyectoContext.Provider
             value={{
                 proyectos: state.proyectos,
                 formulario: state.formulario,
@@ -102,7 +102,7 @@ const ProyectoState = props => {
             }}
         >
             {props.children}
-        </proyectoContext.Provider>
+        </ProyectoContext.Provider>
     )
 }
 
