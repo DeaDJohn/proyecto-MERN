@@ -1,0 +1,32 @@
+{
+  "name": "merntaskservidor",
+  "version": "1.0.0",
+  "description": "Mern API para MERN Task",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeaDJohn/proyecto-MERN.git"
+  },
+  "keywords": [
+    "MERN",
+    "project"
+  ],
+  "author": "Juan Jose Fernández",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeaDJohn/proyecto-MERN/issues"
+  },
+  "homepage": "https://github.com/DeaDJohn/proyecto-MERN#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.9"
+  }
+}
