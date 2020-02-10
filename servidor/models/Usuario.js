@@ -13,10 +13,13 @@ const UsuariosSchema = mongoose.Schema({
         unique: true
     },
     password:{
-
+        type: String,
+        require: true,
+        trim: true
     },
     registro:{
-
+        type: Date,
+        default: Date.now()
     }
 });
 
